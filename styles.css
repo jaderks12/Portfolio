@@ -97,10 +97,17 @@ canvas {
   width: 100%;
   height: 100%;
   background: transparent !important;
-
+  z-index: -1;
   pointer-events: auto;
 }
 
 #particles-js canvas {
   background: transparent !important;
+}
+
+.mysterya {
+  z-index: 9999;
+  width: 100px;
+  height: 500px;
+  background-color: rgb(55, 19, 122);
 }
