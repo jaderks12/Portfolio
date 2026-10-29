@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mystery Box</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #141e30, #243b55);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+      }
+      h1 {
+        font-size: 3rem;
+        animation: fadeInDown 1s ease-out;
+      }
+      p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        opacity: 0;
+        animation: fadeIn 2s ease-in forwards;
+        animation-delay: 1s;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #ff4081;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        transition:
+          background 0.3s,
+          transform 0.2s;
+        animation: fadeInUp 1s ease-out 1.5s forwards;
+        opacity: 0;
+      }
+      button:hover {
+        background-color: #e73370;
+        transform: scale(1.05);
+      }
+      #fact {
+        margin-top: 30px;
+        font-style: italic;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      @keyframes fadeInDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 onclick="showbakla()">WELCOME TO BAKLA RANDOMIZER</h1>
+
+    <p>e click diri para mahibaw.an kinsay bakla</p>
+    <button onclick="showbakla2()">open bakla 2</button>
+    <button onclick="showbakla()">Open Bakla</button>
+    <p id="baks">1 baks</p>
+    <p id="baks2">2 baks</p>
+    <script>
+      const baks = [
+        "kirbu",
+        "fide",
+        " angel",
+        " jalot",
+        " AJ bitbox",
+        "balot",
+        " baki",
+        " tikal",
+      ];
+
+      function showbakla() {
+        const randomIndex = Math.floor(Math.random() * baks.length);
+
+        const baksElement = document.getElementById("baks");
+        baksElement.style.opacity = 0;
+
+        baksElement.textContent = baks[randomIndex];
+        baksElement.style.opacity = 1;
+        baksElement.style.scale = (1, 3);
+        baksElement.style.color = "red";
+        console.log("all baks", baks);
+      }
+      function showbakla2() {
+        const randomIndex = Math.floor(Math.random() * baks.length);
+
+        const baksElement = document.getElementById("baks2");
+        baksElement.style.opacity = 0;
+
+        baksElement.textContent = baks[randomIndex];
+        baksElement.style.opacity = 1;
+        baksElement.style.scale = (1, 3);
+        baksElement.style.color = "red";
+        console.log("all baks", baks);
+      }
+    </script>
+  </body>
+</html>
